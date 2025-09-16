@@ -1,0 +1,49 @@
+import React from 'react';
+
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary';
+  size?: 'md';
+  children: React.ReactNode;
+  asChild?: boolean;
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className = '', variant = 'primary', size = 'md', children, asChild = false, ...props }, ref) => {
+    const baseClasses = 'inline-flex items-center justify-center rounded-sm font-sans font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50';
+    
+    const variantClasses = {
+      primary: 'bg-secondary-700 text-white hover:bg-secondary-900 active:ring-secondary-900 ring-1 ring-secondary-700 hover:ring-secondary-900',
+      secondary: 'bg-neutral-200 text-neutral-950 hover:bg-neutral-100 focus-visible:ring-neutral-700 ring-1 ring-neutral-500',
+    };
+    const sizeClasses = {
+      md: 'h-10 px-4 py-2 text-sm',
+    };
+    
+    const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`.trim();
+    
+    if (asChild) {
+      return (
+        <span
+          className={classes}
+          ref={ref as React.Ref<HTMLSpanElement>}
+          {...(props as React.HTMLAttributes<HTMLSpanElement>)}
+        >
+          {children}
+        </span>
+      );
+    }
+    
+    return (
+      <button
+        className={classes}
+        ref={ref}
+        {...props}
+      >
+        {children}
+      </button>
+    );
+  }
+);
+Button.displayName = 'Button';
+
+export { Button };
