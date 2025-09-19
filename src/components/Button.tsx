@@ -16,7 +16,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       secondary: 'bg-neutral-200 text-neutral-950 hover:bg-neutral-100 focus-visible:ring-neutral-700 ring-1 ring-neutral-500',
     };
     const sizeClasses = {
-      md: 'h-10 px-4 py-2 text-sm',
+      sm: 'h-10 px-4 py-2 text-sm',
+      base: 'h-10 px-6 py-4 text-base',
     };
     
     const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`.trim();

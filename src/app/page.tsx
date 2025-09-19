@@ -1,20 +1,47 @@
 import { Button } from "@/components/Button";
 import { Hero } from "@/components/Hero";
+import { NavigationBar } from "@/components/NavigationBar";
+import { ImageAndText } from "@/components/ImageAndText";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="font-sans">
+      
+      {/* Navigation Bar with Animations */}
+      <NavigationBar
+        logoText="Union Yoga"
+        navigationItems={[
+          { label: "About", href: "#about" },
+          { label: "Classes", href: "#classes" },
+          { label: "Blog", href: "#blog" }
+        ]}
+        signInHref="#signin"
+        primaryButtonText="Get Started"
+        primaryButtonHref="#get-started"
+        enableAnimations={true}
+      />
+
       {/* Hero Section */}
       <Hero
-        title="Designing digital products with enterprises and startups since 2013"
-        description="A safe, innovative, and easy crypto app for everyone. I led end-to-end designs for the Giddy app, revamped the website with marketing, and co-developed a design system with engineering."
+        title="Creating welcoming yoga spaces for every body in Baltimore"
+        description="Our studio offers an open, affirming space where all neighbors can move, breathe, and rest together. We teach trauma-informed classes, provide sliding-scale pricing, and create a community rooted in care, respect, and collective well-being."
         primaryButtonText="Get Started"
         secondaryButtonText="Learn More"
         primaryButtonHref="#"
         secondaryButtonHref="#"
         imageSrc="/img/Yoga_Home_Pic.png"
         imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
+      />
+
+      {/* Image and Text */}
+      <ImageAndText
+        title="Header goes here."
+        description="A warm, inclusive yoga studio for every body. Our teachers center BIPOC voices, guiding classes that honor different abilities and experiences. We nurture connection, healing, and joy through movement, breath, and community care, making yoga truly accessible to all."
+        imageSrc="/img/rocks.jpg"
+        imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
+        imagePosition="left"
+        variant="base"
       />
       
       {/* Design System Link */}
@@ -24,7 +51,7 @@ export default function Home() {
           Discover all the components, colors, typography, and design patterns used throughout our application.
         </p>
         <Link href="/design-system">
-          <Button variant="primary" size="md">
+          <Button variant="primary" size="base">
             View Design System
           </Button>
         </Link>

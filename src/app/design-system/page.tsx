@@ -3,6 +3,8 @@ import { Badge } from "@/components/Badge";
 import { BlogCard } from "@/components/BlogCard";
 import { Hero } from "@/components/Hero";
 import { FeaturedCard } from "@/components/FeaturedCard";
+import { NavigationBar } from "@/components/NavigationBar";
+import { ImageAndText } from "@/components/ImageAndText";
 
 export default function DesignSystem() {
   return (
@@ -17,6 +19,189 @@ export default function DesignSystem() {
           </p>
         </div>
 
+        {/* Navigation Bar Section */}
+        <section className="mb-16">
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold text-foreground mb-2">Navigation Bar</h2>
+            <p className="text-neutral-600 mb-6">
+              A responsive navigation component that adapts to different screen sizes. Features a clean desktop layout 
+              with pill-shaped navigation links and a mobile-friendly hamburger menu with a dark sidebar overlay.
+            </p>
+          </div>
+
+          {/* Navigation Bar Example */}
+          <div className="border border-neutral-200 rounded-lg overflow-hidden">
+            <NavigationBar
+              logoText="Union Yoga"
+              navigationItems={[
+                { label: "About", href: "#about" },
+                { label: "Classes", href: "#classes" },
+                { label: "Blog", href: "#blog" }
+              ]}
+              signInHref="#signin"
+              primaryButtonText="Get Started"
+              primaryButtonHref="#get-started"
+            />
+          </div>
+
+          {/* Responsive Behavior Demo */}
+          <div className="mt-8 space-y-6">
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-4">Responsive Behavior</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="p-4 border border-neutral-200 rounded-lg">
+                  <h4 className="font-medium text-foreground mb-2">Desktop (lg+)</h4>
+                  <ul className="text-sm text-neutral-600 space-y-1">
+                    <li>• Full horizontal layout</li>
+                    <li>• Logo on the left</li>
+                    <li>• Navigation links in center</li>
+                    <li>• Action buttons on the right</li>
+                    <li>• Light neutral-50 background</li>
+                  </ul>
+                </div>
+                <div className="p-4 border border-neutral-200 rounded-lg">
+                  <h4 className="font-medium text-foreground mb-2">Mobile (Closed)</h4>
+                  <ul className="text-sm text-neutral-600 space-y-1">
+                    <li>• Logo on the left</li>
+                    <li>• Hamburger menu on the right</li>
+                    <li>• Navigation links hidden</li>
+                    <li>• Light neutral-50 background</li>
+                  </ul>
+                </div>
+                <div className="p-4 border border-neutral-200 rounded-lg">
+                  <h4 className="font-medium text-foreground mb-2">Mobile (Open)</h4>
+                  <ul className="text-sm text-neutral-600 space-y-1">
+                    <li>• Dark primary-950 sidebar</li>
+                    <li>• White logo and close button</li>
+                    <li>• Vertical navigation links</li>
+                    <li>• Stacked action buttons</li>
+                    <li>• Semi-transparent overlay</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Usage Guidelines */}
+          <div className="mt-8 p-6 bg-neutral-50 rounded-lg">
+            <h4 className="text-lg font-medium text-foreground mb-3">Usage Guidelines</h4>
+            <ul className="space-y-2 text-sm text-neutral-600">
+              <li>• Use as the primary navigation component across all pages</li>
+              <li>• Navigation links are displayed in pill-shaped containers for better visual hierarchy</li>
+              <li>• Mobile menu automatically appears on screens smaller than lg (1024px)</li>
+              <li>• Background changes from neutral-50 to primary-950 when mobile menu is active</li>
+              <li>• Fully accessible with proper ARIA labels and keyboard navigation</li>
+              <li>• Hamburger menu includes both open and close states with appropriate icons</li>
+              <li>• Mobile sidebar includes overlay for better focus management</li>
+              <li>• All interactive elements have hover and focus states</li>
+              <li>• Logo and navigation items automatically close mobile menu when clicked</li>
+              <li>• Customizable navigation items, logo text, and button text via props</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Image and Text Section */}
+        <section className="mb-16">
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold text-foreground mb-2">Image and Text</h2>
+            <p className="text-neutral-600 mb-6">
+              A versatile content component that pairs compelling text with engaging imagery. 
+              Available in three distinct variants to match different design contexts and content needs.
+            </p>
+          </div>
+
+          {/* Image and Text Examples */}
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-4">Base Variant</h3>
+              <div className="border border-neutral-200 rounded-lg overflow-hidden">
+                <ImageAndText
+                  title="Header goes here."
+                  description="A warm, inclusive yoga studio for every body. Our teachers center BIPOC voices, guiding classes that honor different abilities and experiences. We nurture connection, healing, and joy through movement, breath, and community care, making yoga truly accessible to all."
+                  imageSrc="/img/rocks.jpg"
+                  imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
+                  variant="base"
+                />
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-4">Secondary Variant</h3>
+              <div className="border border-neutral-200 rounded-lg overflow-hidden">
+                <ImageAndText
+                  title="Header goes here."
+                  description="A warm, inclusive yoga studio for every body. Our teachers center BIPOC voices, guiding classes that honor different abilities and experiences. We nurture connection, healing, and joy through movement, breath, and community care, making yoga truly accessible to all."
+                  imageSrc="/img/rocks.jpg"
+                  imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
+                  variant="secondary"
+                />
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-4">Tertiary Variant</h3>
+              <div className="border border-neutral-200 rounded-lg overflow-hidden">
+                <ImageAndText
+                  title="Header goes here."
+                  description="A warm, inclusive yoga studio for every body. Our teachers center BIPOC voices, guiding classes that honor different abilities and experiences. We nurture connection, healing, and joy through movement, breath, and community care, making yoga truly accessible to all."
+                  imageSrc="/img/rocks.jpg"
+                  imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
+                  variant="tertiary"
+                />
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-4">Image Position Variants</h3>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-base font-medium text-foreground mb-2">Image on Right (Default)</h4>
+                  <div className="border border-neutral-200 rounded-lg overflow-hidden">
+                    <ImageAndText
+                      title="Image on the Right"
+                      description="This is the default layout with text on the left and image on the right."
+                      imageSrc="/img/rocks.jpg"
+                      imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
+                      variant="base"
+                      imagePosition="right"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-base font-medium text-foreground mb-2">Image on Left</h4>
+                  <div className="border border-neutral-200 rounded-lg overflow-hidden">
+                    <ImageAndText
+                      title="Image on the Left"
+                      description="This layout places the image on the left and text on the right."
+                      imageSrc="/img/rocks.jpg"
+                      imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
+                      variant="secondary"
+                      imagePosition="left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Usage Guidelines */}
+          <div className="mt-8 p-6 bg-neutral-50 rounded-lg">
+            <h4 className="text-lg font-medium text-foreground mb-3">Usage Guidelines</h4>
+            <ul className="space-y-2 text-sm text-neutral-600">
+              <li>• <strong>Base Variant:</strong> Use for standard content sections with white background and dark text</li>
+              <li>• <strong>Secondary Variant:</strong> Use for subtle content sections with neutral-50 background and dark text</li>
+              <li>• <strong>Tertiary Variant:</strong> Use for high-impact sections with primary-950 background and white text</li>
+              <li>• <strong>Image Position:</strong> Choose 'left' or 'right' to control image placement relative to text</li>
+              <li>• <strong>Responsive Design:</strong> Layout automatically stacks vertically on mobile devices</li>
+              <li>• <strong>Accessibility:</strong> Always provide meaningful alt text for images</li>
+              <li>• <strong>Content Guidelines:</strong> Keep titles concise and descriptions informative but brief</li>
+              <li>• <strong>Interactive Use:</strong> Add href prop to make the entire component clickable</li>
+              <li>• <strong>Typography:</strong> Uses font-sans for consistent branding across all variants</li>
+              <li>• <strong>Image Quality:</strong> Use high-resolution images that work well at different screen sizes</li>
+            </ul>
+          </div>
+        </section>
+
         {/* Hero Section */}
         <section className="mb-16">
           <div className="mb-8">
@@ -30,8 +215,8 @@ export default function DesignSystem() {
           {/* Hero Example */}
           <div className="border border-neutral-200 rounded-lg overflow-hidden">
             <Hero
-              title="Designing digital products with enterprises and startups since 2013"
-              description="A safe, innovative, and easy crypto app for everyone. I led end-to-end designs for the Giddy app, revamped the website with marketing, and co-developed a design system with engineering."
+              title="Creating welcoming yoga spaces for every body in Baltimore"
+              description="Our studio offers an open, affirming space where all neighbors can move, breathe, and rest together. We teach trauma-informed classes, provide sliding-scale pricing, and create a community rooted in care, respect, and collective well-being."
               primaryButtonText="Get Started"
               secondaryButtonText="Learn More"
               primaryButtonHref="#"
@@ -139,13 +324,13 @@ export default function DesignSystem() {
               <h3 className="text-lg font-medium text-foreground mb-4">Variants</h3>
               <div className="flex flex-wrap gap-4">
                 <div className="flex flex-col gap-2">
-                  <Button variant="primary" size="md">
+                  <Button variant="primary" size="base">
                     Primary Button
                   </Button>
                   <span className="text-sm text-neutral-500">Primary variant</span>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <Button variant="secondary" size="md">
+                  <Button variant="secondary" size="base">
                     Secondary Button
                   </Button>
                   <span className="text-sm text-neutral-500">Secondary variant</span>
@@ -158,13 +343,13 @@ export default function DesignSystem() {
               <h3 className="text-lg font-medium text-foreground mb-4">States</h3>
               <div className="flex flex-wrap gap-4">
                 <div className="flex flex-col gap-2">
-                  <Button variant="primary" size="md">
+                  <Button variant="primary" size="base">
                     Default
                   </Button>
                   <span className="text-sm text-neutral-500">Default state</span>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <Button variant="primary" size="md" disabled>
+                  <Button variant="primary" size="base" disabled>
                     Disabled
                   </Button>
                   <span className="text-sm text-neutral-500">Disabled state</span>
@@ -177,10 +362,16 @@ export default function DesignSystem() {
               <h3 className="text-lg font-medium text-foreground mb-4">Sizes</h3>
               <div className="flex flex-wrap items-end gap-4">
                 <div className="flex flex-col gap-2">
-                  <Button variant="primary" size="md">
-                    Medium
+                  <Button variant="primary" size="base">
+                    Base
                   </Button>
-                  <span className="text-sm text-neutral-500">Medium (md)</span>
+                  <span className="text-sm text-neutral-500">Base (base)</span>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <Button variant="primary" size="sm">
+                    Small
+                  </Button>
+                  <span className="text-sm text-neutral-500">Small (sm)</span>
                 </div>
               </div>
             </div>

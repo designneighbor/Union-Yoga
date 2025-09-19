@@ -26,7 +26,7 @@ const Hero = React.forwardRef<HTMLDivElement, HeroProps>(
     imageAlt,
     ...props 
   }, ref) => {
-    const baseClasses = 'w-full min-h-screen flex items-center justify-center bg-neutral-50';
+    const baseClasses = 'w-full min-h-auto py-6 md:py-12 flex items-center justify-center bg-neutral-50';
     
     const classes = `${baseClasses} ${className}`.trim();
     
@@ -41,20 +41,20 @@ const Hero = React.forwardRef<HTMLDivElement, HeroProps>(
             {/* Left Column - Text Content */}
             <div className="space-y-8 order-2 lg:order-1">
               {/* Main Heading */}
-              <h1 className="font-sans text-4xl sm:text-5xl lg:text-6xl xl:text-7xl/17 font-bold text-primary-950 leading-tight">
+              <h1 className="font-sans text-4xl sm:text-5xl lg:text-6xl xl:text-7xl/19 font-bold text-primary-950 leading-tight opacity-0 animate-fade-in-up animation-delay-400">
                 {title}
               </h1>
               
               {/* Description */}
-              <p className="font-sans text-lg sm:text-xl lg:text-2xl text-foreground text-primary-950leading-relaxed max-w-2xl">
+              <p className="font-sans text-lg sm:text-xl lg:text-2xl text-foreground text-primary-950leading-relaxed max-w-2xl opacity-0 animate-fade-in-up animation-delay-600">
                 {description}
               </p>
               
               {/* Call-to-Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 opacity-0 animate-fade-in-up animation-delay-800">
                 <Button
                   variant="primary"
-                  size="md"
+                  size="base"
                   className="w-full sm:w-auto"
                   asChild={!!primaryButtonHref}
                 >
@@ -69,7 +69,7 @@ const Hero = React.forwardRef<HTMLDivElement, HeroProps>(
                 
                 <Button
                   variant="secondary"
-                  size="md"
+                  size="base"
                   className="w-full sm:w-auto"
                   asChild={!!secondaryButtonHref}
                 >
@@ -85,7 +85,7 @@ const Hero = React.forwardRef<HTMLDivElement, HeroProps>(
             </div>
             
             {/* Right Column - Image */}
-            <div className="relative order-1 lg:order-2 hidden md:block">
+            <div className="relative order-1 lg:order-2 hidden md:block opacity-0 animate-fade-in-up animation-delay-800">
               <div className="relative w-full h-96 sm:h-[500px] lg:h-[600px] xl:h-[700px] overflow-hidden">
                 <Image
                   src={imageSrc}
