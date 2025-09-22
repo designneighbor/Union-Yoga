@@ -12,6 +12,7 @@ export const useScrollAnimation = (animationClass: string = 'fade-in-up') => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            entry.target.classList.add(animationClass);
           }
         });
       },
@@ -26,7 +27,7 @@ export const useScrollAnimation = (animationClass: string = 'fade-in-up') => {
     return () => {
       observer.unobserve(element);
     };
-  }, []);
+  }, [animationClass]);
 
   return ref;
 };

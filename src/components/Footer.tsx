@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Button } from './Button';
 import { Instagram, Facebook, Twitter } from 'lucide-react';
 
@@ -112,12 +113,12 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12">
             {/* Logo */}
             <div className="mb-6 lg:mb-0">
-              <a 
+              <Link 
                 href="/" 
                 className="font-sans text-3xl lg:text-4xl font-bold text-primary-950 hover:text-primary-800 transition-colors duration-200"
               >
                 {logoText}
-              </a>
+              </Link>
             </div>
 
             {/* Action Buttons */}
@@ -228,7 +229,7 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
               <p className="font-semibold mb-2">Disclaimer:</p>
               <p className="mb-2">
                 The information provided on this website is for educational and informational purposes only. 
-                Yoga practice should be approached with care and respect for your body's limitations. 
+                Yoga practice should be approached with care and respect for your body&apos;s limitations. 
                 Always consult with a healthcare professional before beginning any new exercise program.
               </p>
               <p>

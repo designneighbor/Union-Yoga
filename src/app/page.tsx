@@ -1,4 +1,3 @@
-import { Button } from "@/components/Button";
 import { Hero } from "@/components/Hero";
 import { NavigationBar } from "@/components/NavigationBar";
 import { ImageAndText } from "@/components/ImageAndText";
@@ -48,7 +47,7 @@ export default function Home() {
         <FeaturedCard
           title="Our Studio"
           description="Visit our welcoming space designed for every body"
-          imageSrc="/img/studio_new.jpg"
+          imageSrc="/img/studio.jpg"
           imageAlt="Featured Card 3 image"
         />
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Button } from './Button';
 
 export interface NavigationBarProps extends React.HTMLAttributes<HTMLElement> {
@@ -56,19 +57,19 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
           <div className="flex items-center justify-between py-4">
             {/* Logo */}
             <div className={`flex-shrink-0 ${logoAnimationClass}`}>
-              <a 
+              <Link 
                 href="/" 
                 className="font-sans text-xl lg:text-2xl font-bold text-primary-950 hover:text-primary-800 transition-colors duration-200"
                 onClick={closeMobileMenu}
               >
                 {logoText}
-              </a>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
-            
+            <div className="hidden lg:flex items-center space-x-4">
               {/* Navigation Links */}
-              <div className={`items-center space-x-2 bg-neutral-200 hidden lg:flex rounded-full ${navLinksAnimationClass}`}>
+              <div className={`items-center space-x-2 bg-neutral-200 flex rounded-full ${navLinksAnimationClass}`}>
                 {navigationItems.map((item, index) => (
                   <a
                     key={index}
@@ -79,11 +80,9 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
                   </a>
                 ))}
               </div>
-            
-              
 
               {/* Action Buttons */}
-              <div className={`hidden lg:flex items-center space-x-4 ${buttonsAnimationClass}`}>
+              <div className={`flex items-center space-x-4 ${buttonsAnimationClass}`}>
                 <a
                   href={signInHref}
                   className="font-sans text-sm font-medium text-primary-950 hover:text-primary-800 transition-colors duration-200"
@@ -100,6 +99,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
                   </a>
                 </Button>
               </div>
+            </div>
            
 
             {/* Mobile Menu Button */}
@@ -156,13 +156,13 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
               <div className="fixed inset-0 z-50 bg-primary-950">
                 {/* Header */}
                 <div className="flex items-center justify-between px-6 py-4 border-b border-primary-800">
-                  <a 
+                  <Link
                     href="/" 
                     className="font-sans text-xl font-bold text-white hover:text-neutral-200 transition-colors duration-200"
                     onClick={closeMobileMenu}
                   >
                     {logoText}
-                  </a>
+                  </Link>
                   <button
                     type="button"
                     className="flex items-center justify-center h-8 w-8 rounded-full text-white hover:text-neutral-200 hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors duration-200"

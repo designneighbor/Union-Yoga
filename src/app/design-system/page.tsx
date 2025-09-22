@@ -182,7 +182,7 @@ export default function DesignSystem() {
               <li>• <strong>Base Variant:</strong> Use for standard content sections with white background and dark text</li>
               <li>• <strong>Secondary Variant:</strong> Use for subtle content sections with neutral-50 background and dark text</li>
               <li>• <strong>Tertiary Variant:</strong> Use for high-impact sections with primary-950 background and white text</li>
-              <li>• <strong>Image Position:</strong> Choose 'left' or 'right' to control image placement relative to text</li>
+              <li>• <strong>Image Position:</strong> Choose &apos;left&apos; or &apos;right&apos; to control image placement relative to text</li>
               <li>• <strong>Responsive Design:</strong> Layout automatically stacks vertically on mobile devices</li>
               <li>• <strong>Accessibility:</strong> Always provide meaningful alt text for images</li>
               <li>• <strong>Content Guidelines:</strong> Keep titles concise and descriptions informative but brief</li>
