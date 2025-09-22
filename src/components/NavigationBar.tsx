@@ -59,7 +59,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
             <div className={`flex-shrink-0 ${logoAnimationClass}`}>
               <Link 
                 href="/" 
-                className="font-sans text-xl lg:text-2xl font-bold text-primary-950 hover:text-primary-800 transition-colors duration-200"
+                className="font-sans font-bold text-xl lg:text-2xl text-primary-950 hover:text-primary-800 transition-colors duration-200"
                 onClick={closeMobileMenu}
               >
                 {logoText}
@@ -75,7 +75,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
                   <a
                     key={index}
                     href={item.href}
-                    className="font-sans text-base font-medium text-primary-950 hover:text-primary-950 px-4 py-2 rounded-full hover:bg-neutral-300/50 transition-colors duration-200"
+                    className="font-sans font-normal text-base font-medium text-primary-950 hover:text-primary-950 px-4 py-2 rounded-full hover:bg-neutral-300/50 transition-colors duration-200"
                   >
                     {item.label}
                   </a>
@@ -86,7 +86,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
               <div className={`hidden lg:flex items-center space-x-4 ${buttonsAnimationClass}`}>
                 <a
                   href={signInHref}
-                  className="font-sans text-sm font-medium text-primary-950 hover:text-primary-800 transition-colors duration-200"
+                  className="font-sans font-normal text-sm font-medium text-primary-950 hover:text-primary-800 transition-colors duration-200"
                 >
                   Sign In
                 </a>
@@ -160,7 +160,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
                 <div className="flex items-center justify-between px-6 py-4 border-b border-primary-800">
                   <Link
                     href="/" 
-                    className="font-sans text-xl font-bold text-white hover:text-neutral-200 transition-colors duration-200"
+                    className="font-sans font-bold text-xl text-white hover:text-neutral-200 transition-colors duration-200"
                     onClick={closeMobileMenu}
                   >
                     {logoText}
@@ -195,7 +195,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
                       <div key={index}>
                         <a
                           href={item.href}
-                          className="font-sans text-lg px-6 py-4 font-medium text-white hover:text-neutral-200 border-b border-primary-800 block hover:bg-primary-800 transition-colors duration-200"
+                          className="font-sans font-normal text-lg px-6 py-4 font-medium text-white hover:text-neutral-200 border-b border-primary-800 block hover:bg-primary-800 transition-colors duration-200"
                           onClick={closeMobileMenu}
                         >
                           {item.label}

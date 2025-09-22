@@ -41,7 +41,7 @@ const Hero = React.forwardRef<HTMLDivElement, HeroProps>(
             {/* Left Column - Text Content */}
             <div className="space-y-8 order-2 lg:order-1">
               {/* Main Heading */}
-              <h1 className="font-sans text-4xl sm:text-5xl lg:text-6xl xl:text-7xl/19 font-bold text-primary-950 leading-tight fade-in-up delay-200">
+              <h1 className="font-sans text-4xl sm:text-5xl lg:text-6xl xl:text-7xl/19 text-primary-950 leading-tight fade-in-up delay-200">
                 {title}
               </h1>
               

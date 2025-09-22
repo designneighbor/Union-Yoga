@@ -10,7 +10,7 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
     const baseClasses = 'inline-flex items-center justify-center font-sans font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2';
     
     const variantClasses = {
-      default: 'bg-neutral-200 text-neutral-950 border border-neutral-700 focus-visible:ring-neutral-700',
+      default: 'bg-neutral-200 font-normal text-neutral-950 border border-neutral-700 focus-visible:ring-neutral-700',
       // Future variants can be added here:
       // primary: 'bg-primary-200 text-primary-950 border border-primary-700 focus-visible:ring-primary-700',
       // secondary: 'bg-secondary-200 text-secondary-950 border border-secondary-700 focus-visible:ring-secondary-700',
