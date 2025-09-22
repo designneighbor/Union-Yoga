@@ -67,9 +67,10 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-4">
+           
+
               {/* Navigation Links */}
-              <div className={`items-center space-x-2 bg-neutral-200 flex rounded-full ${navLinksAnimationClass}`}>
+              <div className={`items-center space-x-2 bg-neutral-200 flex hidden lg:flex rounded-full ${navLinksAnimationClass}`}>
                 {navigationItems.map((item, index) => (
                   <a
                     key={index}
@@ -82,7 +83,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
               </div>
 
               {/* Action Buttons */}
-              <div className={`flex items-center space-x-4 ${buttonsAnimationClass}`}>
+              <div className={`hidden lg:flex items-center space-x-4 ${buttonsAnimationClass}`}>
                 <a
                   href={signInHref}
                   className="font-sans text-sm font-medium text-primary-950 hover:text-primary-800 transition-colors duration-200"
@@ -99,7 +100,8 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
                   </a>
                 </Button>
               </div>
-            </div>
+              
+        
            
 
             {/* Mobile Menu Button */}
