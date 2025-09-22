@@ -5,6 +5,7 @@ import { Hero } from "@/components/Hero";
 import { FeaturedCard } from "@/components/FeaturedCard";
 import { NavigationBar } from "@/components/NavigationBar";
 import { ImageAndText } from "@/components/ImageAndText";
+import { Footer } from "@/components/Footer";
 
 export default function DesignSystem() {
   return (
@@ -31,17 +32,7 @@ export default function DesignSystem() {
 
           {/* Navigation Bar Example */}
           <div className="border border-neutral-200 rounded-lg overflow-hidden">
-            <NavigationBar
-              logoText="Union Yoga"
-              navigationItems={[
-                { label: "About", href: "#about" },
-                { label: "Classes", href: "#classes" },
-                { label: "Blog", href: "#blog" }
-              ]}
-              signInHref="#signin"
-              primaryButtonText="Get Started"
-              primaryButtonHref="#get-started"
-            />
+            <NavigationBar />
           </div>
 
           {/* Responsive Behavior Demo */}
@@ -788,41 +779,39 @@ export default function DesignSystem() {
           </div>
         </section>
 
-        {/* Future Components Placeholder */}
+        {/* Footer Section */}
         <section className="mb-16">
           <div className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-2">Coming Soon</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-2">Footer</h2>
             <p className="text-neutral-600 mb-6">
-              Additional components will be added to this design system as the project grows.
+              A comprehensive footer component that provides site-wide navigation, contact information, 
+              and legal links. Features responsive design with mobile-friendly layout and accessibility features.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-6 border border-neutral-200 rounded-lg text-center">
-              <div className="w-12 h-12 bg-neutral-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <span className="text-neutral-400 text-xl">📝</span>
-              </div>
-              <h3 className="font-medium text-foreground mb-2">Form Elements</h3>
-              <p className="text-sm text-neutral-500">Inputs, selects, checkboxes, and other form components</p>
-            </div>
-            
-            <div className="p-6 border border-neutral-200 rounded-lg text-center">
-              <div className="w-12 h-12 bg-neutral-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <span className="text-neutral-400 text-xl">🎨</span>
-              </div>
-              <h3 className="font-medium text-foreground mb-2">Cards & Layouts</h3>
-              <p className="text-sm text-neutral-500">Card components, containers, and layout patterns</p>
-            </div>
-            
-            <div className="p-6 border border-neutral-200 rounded-lg text-center">
-              <div className="w-12 h-12 bg-neutral-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <span className="text-neutral-400 text-xl">📊</span>
-              </div>
-              <h3 className="font-medium text-foreground mb-2">Data Display</h3>
-              <p className="text-sm text-neutral-500">Tables, lists, and data visualization components</p>
-            </div>
+
+          {/* Footer Example */}
+          <div className="border border-neutral-200 rounded-lg overflow-hidden">
+            <Footer />
+          </div>
+
+          {/* Usage Guidelines */}
+          <div className="mt-8 p-6 bg-neutral-50 rounded-lg">
+            <h4 className="text-lg font-medium text-foreground mb-3">Usage Guidelines</h4>
+            <ul className="space-y-2 text-sm text-neutral-600">
+              <li>• <strong>Logo:</strong> Customize the logoText prop to match your brand</li>
+              <li>• <strong>Action Buttons:</strong> Configure contactSalesHref and signInHref for your specific needs</li>
+              <li>• <strong>Navigation Links:</strong> Pre-configured with yoga-appropriate links, easily customizable</li>
+              <li>• <strong>Social Media:</strong> Add your social media links with custom icons</li>
+              <li>• <strong>Responsive Design:</strong> Automatically adapts from desktop grid to mobile stack layout</li>
+              <li>• <strong>Accessibility:</strong> Includes proper ARIA labels, focus states, and keyboard navigation</li>
+              <li>• <strong>Legal Section:</strong> Includes standard legal links and disclaimer text</li>
+              <li>• <strong>Typography:</strong> Uses font-sans for consistent branding across all text elements</li>
+              <li>• <strong>Color Scheme:</strong> Follows primary-950 and neutral color palette from globals.css</li>
+              <li>• <strong>Interactive States:</strong> Hover and focus states for all interactive elements</li>
+            </ul>
           </div>
         </section>
+
       </div>
     </div>
   );

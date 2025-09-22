@@ -2,13 +2,13 @@ import React from 'react';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary';
-  size?: 'md';
+  size?: 'sm' | 'base';
   children: React.ReactNode;
   asChild?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className = '', variant = 'primary', size = 'md', children, asChild = false, ...props }, ref) => {
+  ({ className = '', variant = 'primary', size = 'base', children, asChild = false, ...props }, ref) => {
     const baseClasses = 'inline-flex items-center justify-center rounded-sm font-sans font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50';
     
     const variantClasses = {

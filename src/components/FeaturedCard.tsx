@@ -1,15 +1,19 @@
 import React from 'react';
 import Image from 'next/image';
 
-export interface FeaturedCardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface FeaturedCardProps {
   title: string;
   description: string;
   imageSrc: string;
   imageAlt: string;
   href?: string;
+  className?: string;
 }
 
-const FeaturedCard = React.forwardRef<HTMLDivElement, FeaturedCardProps>(
+const FeaturedCard = React.forwardRef<
+  HTMLDivElement | HTMLAnchorElement,
+  FeaturedCardProps & React.HTMLAttributes<HTMLDivElement>
+>(
   ({ 
     className = '', 
     title,
@@ -31,7 +35,8 @@ const FeaturedCard = React.forwardRef<HTMLDivElement, FeaturedCardProps>(
             src={imageSrc}
             alt={imageAlt}
             fill
-            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+            className="object-top object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+            style={{ objectPosition: '50% 10%' }}
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
             priority
           />
@@ -58,7 +63,7 @@ const FeaturedCard = React.forwardRef<HTMLDivElement, FeaturedCardProps>(
           href={href}
           className={classes}
           ref={ref as React.Ref<HTMLAnchorElement>}
-          {...props}
+          {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
         >
           {content}
         </a>
@@ -68,7 +73,7 @@ const FeaturedCard = React.forwardRef<HTMLDivElement, FeaturedCardProps>(
     return (
       <div
         className={classes}
-        ref={ref}
+        ref={ref as React.Ref<HTMLDivElement>}
         {...props}
       >
         {content}

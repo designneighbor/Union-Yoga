@@ -25,8 +25,8 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
       { label: "Blog", href: "#blog" }
     ],
     signInHref = "#signin",
-    primaryButtonText = "Get Started",
-    primaryButtonHref = "#get-started",
+    primaryButtonText = "Design System",
+    primaryButtonHref = "/design-system",
     enableAnimations = false,
     ...props 
   }, ref) => {
@@ -41,10 +41,10 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
     };
 
     // Animation classes based on enableAnimations prop
-    const logoAnimationClass = enableAnimations ? 'opacity-0 animate-fade-in-down animation-delay-200' : '';
-    const navLinksAnimationClass = enableAnimations ? 'opacity-0 animate-fade-in-down animation-delay-400' : '';
-    const buttonsAnimationClass = enableAnimations ? 'opacity-0 animate-fade-in-down animation-delay-800' : '';
-    const borderAnimationClass = enableAnimations ? 'opacity-0 animate-fade-in-down animation-delay-600' : '';
+    const logoAnimationClass = enableAnimations ? 'fade-in-down delay-200' : '';
+    const navLinksAnimationClass = enableAnimations ? 'fade-in-down delay-400' : '';
+    const buttonsAnimationClass = enableAnimations ? 'fade-in-down delay-800' : '';
+    const borderAnimationClass = enableAnimations ? 'fade-in-down delay-600' : '';
 
     return (
       <nav
@@ -52,8 +52,8 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
         ref={ref}
         {...props}
       >
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="container px-4 sm:px-6 md:px-8 xl:px-10">
+          <div className="flex items-center justify-between py-4">
             {/* Logo */}
             <div className={`flex-shrink-0 ${logoAnimationClass}`}>
               <a 
@@ -73,7 +73,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
                   <a
                     key={index}
                     href={item.href}
-                    className="font-sans text-base font-medium text-primary-950 hover:text-primary-950 px-4 py-2 rounded-full hover:bg-neutral-300 transition-colors duration-200"
+                    className="font-sans text-base font-medium text-primary-950 hover:text-primary-950 px-4 py-2 rounded-full hover:bg-neutral-300/50 transition-colors duration-200"
                   >
                     {item.label}
                   </a>

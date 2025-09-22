@@ -26,7 +26,7 @@ const BlogCard = React.forwardRef<HTMLDivElement, BlogCardProps>(
     variant = 'base',
     ...props 
   }, ref) => {
-    const baseClasses = 'group block bg-background overflow-hidden transition-all duration-300 focus-within:ring-2 focus-within:ring-primary-500 focus-within:ring-offset-2';
+    const baseClasses = 'group block overflow-hidden transition-all duration-300 focus-within:ring-2 focus-within:ring-primary-500 focus-within:ring-offset-2';
     
     const variantClasses = {
       base: 'rounded-lg',

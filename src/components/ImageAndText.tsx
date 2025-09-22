@@ -9,6 +9,7 @@ export interface ImageAndTextProps extends React.HTMLAttributes<HTMLDivElement> 
   variant?: 'base' | 'secondary' | 'tertiary';
   imagePosition?: 'left' | 'right';
   href?: string;
+  enableAnimations?: boolean;
 }
 
 const ImageAndText = React.forwardRef<HTMLDivElement, ImageAndTextProps>(
@@ -34,7 +35,7 @@ const ImageAndText = React.forwardRef<HTMLDivElement, ImageAndTextProps>(
     const classes = `${baseClasses} ${variantClasses[variant]} ${className}`.trim();
 
     const content = (
-        <div className="container px-6 py-12 gap-8 flex items-stretch lg:items-center flex-col lg:flex-row">
+        <div className="container px-4 sm:px-6 md:px-8 xl:px-10 py-12 gap-8 flex items-stretch lg:items-center flex-col lg:flex-row">
           {/* Text Content */}
           <div className={`flex items-center justify-center flex-1 ${imagePosition === 'right' ? 'lg:order-1' : 'lg:order-2'}`}>
             <div className="w-full">
