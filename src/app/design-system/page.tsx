@@ -11,6 +11,7 @@ export default function DesignSystem() {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-12">
+
         {/* Header */}
         <div className="mb-16">
           <h1 className="text-4xl font-bold text-foreground mb-4">Design System</h1>
@@ -91,212 +92,146 @@ export default function DesignSystem() {
           </div>
         </section>
 
-        {/* Image and Text Section */}
+        {/* Colors Section */}
         <section className="mb-16">
           <div className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-2">Image and Text</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-2">Colors</h2>
             <p className="text-neutral-600 mb-6">
-              A versatile content component that pairs compelling text with engaging imagery. 
-              Available in three distinct variants to match different design contexts and content needs.
+              A comprehensive color palette designed for the Union Yoga brand. Each color family includes 
+              tints from 50 (lightest) to 950 (darkest) for maximum design flexibility and accessibility.
             </p>
           </div>
 
-          {/* Image and Text Examples */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-lg font-medium text-foreground mb-4">Base Variant</h3>
-              <div className="border border-neutral-200 rounded-lg overflow-hidden">
-                <ImageAndText
-                  title="Header goes here."
-                  description="A warm, inclusive yoga studio for every body. Our teachers center BIPOC voices, guiding classes that honor different abilities and experiences. We nurture connection, healing, and joy through movement, breath, and community care, making yoga truly accessible to all."
-                  imageSrc="/img/rocks.jpg"
-                  imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
-                  variant="base"
-                />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-medium text-foreground mb-4">Secondary Variant</h3>
-              <div className="border border-neutral-200 rounded-lg overflow-hidden">
-                <ImageAndText
-                  title="Header goes here."
-                  description="A warm, inclusive yoga studio for every body. Our teachers center BIPOC voices, guiding classes that honor different abilities and experiences. We nurture connection, healing, and joy through movement, breath, and community care, making yoga truly accessible to all."
-                  imageSrc="/img/rocks.jpg"
-                  imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
-                  variant="secondary"
-                />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-medium text-foreground mb-4">Tertiary Variant</h3>
-              <div className="border border-neutral-200 rounded-lg overflow-hidden">
-                <ImageAndText
-                  title="Header goes here."
-                  description="A warm, inclusive yoga studio for every body. Our teachers center BIPOC voices, guiding classes that honor different abilities and experiences. We nurture connection, healing, and joy through movement, breath, and community care, making yoga truly accessible to all."
-                  imageSrc="/img/rocks.jpg"
-                  imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
-                  variant="tertiary"
-                />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-medium text-foreground mb-4">Image Position Variants</h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-base font-medium text-foreground mb-2">Image on Right (Default)</h4>
-                  <div className="border border-neutral-200 rounded-lg overflow-hidden">
-                    <ImageAndText
-                      title="Image on the Right"
-                      description="This is the default layout with text on the left and image on the right."
-                      imageSrc="/img/rocks.jpg"
-                      imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
-                      variant="base"
-                      imagePosition="right"
-                    />
+          {/* Color Scale Header */}
+          <div className="mb-6">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-20 text-sm font-medium text-neutral-500">Color</div>
+              <div className="grid grid-cols-11 gap-1 flex-1">
+                {[50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map((shade) => (
+                  <div key={shade} className="text-xs font-medium text-neutral-500 text-center">
+                    {shade}
                   </div>
-                </div>
-                <div>
-                  <h4 className="text-base font-medium text-foreground mb-2">Image on Left</h4>
-                  <div className="border border-neutral-200 rounded-lg overflow-hidden">
-                    <ImageAndText
-                      title="Image on the Left"
-                      description="This layout places the image on the left and text on the right."
-                      imageSrc="/img/rocks.jpg"
-                      imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
-                      variant="secondary"
-                      imagePosition="left"
-                    />
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Usage Guidelines */}
-          <div className="mt-8 p-6 bg-neutral-50 rounded-lg">
-            <h4 className="text-lg font-medium text-foreground mb-3">Usage Guidelines</h4>
-            <ul className="space-y-2 text-sm text-neutral-600">
-              <li>• <strong>Base Variant:</strong> Use for standard content sections with white background and dark text</li>
-              <li>• <strong>Secondary Variant:</strong> Use for subtle content sections with neutral-50 background and dark text</li>
-              <li>• <strong>Tertiary Variant:</strong> Use for high-impact sections with primary-950 background and white text</li>
-              <li>• <strong>Image Position:</strong> Choose &apos;left&apos; or &apos;right&apos; to control image placement relative to text</li>
-              <li>• <strong>Responsive Design:</strong> Layout automatically stacks vertically on mobile devices</li>
-              <li>• <strong>Accessibility:</strong> Always provide meaningful alt text for images</li>
-              <li>• <strong>Content Guidelines:</strong> Keep titles concise and descriptions informative but brief</li>
-              <li>• <strong>Interactive Use:</strong> Add href prop to make the entire component clickable</li>
-              <li>• <strong>Typography:</strong> Uses font-sans for consistent branding across all variants</li>
-              <li>• <strong>Image Quality:</strong> Use high-resolution images that work well at different screen sizes</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Hero Section */}
-        <section className="mb-16">
-          <div className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-2">Hero Section</h2>
-            <p className="text-neutral-600 mb-6">
-              A full-width hero section with compelling messaging, call-to-action buttons, and a prominent image. 
-              Perfect for landing pages and key content areas.
-            </p>
-          </div>
-
-          {/* Hero Example */}
-          <div className="border border-neutral-200 rounded-lg overflow-hidden">
-            <Hero
-              title="Creating welcoming yoga spaces for every body in Baltimore"
-              description="Our studio offers an open, affirming space where all neighbors can move, breathe, and rest together. We teach trauma-informed classes, provide sliding-scale pricing, and create a community rooted in care, respect, and collective well-being."
-              primaryButtonText="Get Started"
-              secondaryButtonText="Learn More"
-              primaryButtonHref="#"
-              secondaryButtonHref="#"
-              imageSrc="/img/Yoga_Home_Pic.png"
-              imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
-            />
-          </div>
-
-          {/* Usage Guidelines */}
-          <div className="mt-8 p-6 bg-neutral-50 rounded-lg">
-            <h4 className="text-lg font-medium text-foreground mb-3">Usage Guidelines</h4>
-            <ul className="space-y-2 text-sm text-neutral-600">
-              <li>• Use hero sections for key landing pages and important content areas</li>
-              <li>• Keep headlines concise but impactful - aim for 6-12 words</li>
-              <li>• Description should provide context and value proposition in 1-2 sentences</li>
-              <li>• Primary button should represent the main action you want users to take</li>
-              <li>• Secondary button should offer an alternative or less urgent action</li>
-              <li>• Use high-quality, relevant images that support your message</li>
-              <li>• Ensure text has sufficient contrast against background colors</li>
-              <li>• Test on mobile devices to ensure responsive layout works well</li>
-              <li>• Consider accessibility - provide meaningful alt text for images</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Featured Card Section */}
-        <section className="mb-16">
-          <div className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-2">Featured Cards</h2>
-            <p className="text-neutral-600 mb-6">
-              Eye-catching cards with overlay text and hover effects. Perfect for highlighting featured content, 
-              programs, or key messages with compelling visuals and smooth interactions.
-            </p>
-          </div>
-
-          {/* Featured Card Examples */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-lg font-medium text-foreground mb-4">Single Featured Card</h3>
-              <div className="max-w-md">
-                <FeaturedCard
-                  title="Inclusive Programs for People of All Backgrounds"
-                  description="Join our welcoming community where everyone belongs. Experience yoga, meditation, and wellness practices designed for people from all walks of life."
-                  imageSrc="/img/featured_card.jpg"
-                  imageAlt="Person in yoga pose with arms raised, wearing mustard yellow athletic top"
-                />
+          {/* Color Palettes */}
+          <div className="space-y-4">
+            {/* Primary Colors */}
+            <div className="flex items-center gap-2">
+              <div className="w-20 text-sm font-medium text-neutral-500">Primary</div>
+              <div className="grid grid-cols-11 gap-1 flex-1">
+                <div className="h-12 rounded bg-primary-50 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-primary-100 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-primary-200 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-primary-300 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-primary-400 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-primary-500 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-primary-600 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-primary-700 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-primary-800 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-primary-900 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-primary-950 border border-neutral-200"></div>
               </div>
             </div>
 
-            <div>
-              <h3 className="text-lg font-medium text-foreground mb-4">Featured Card Grid</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <FeaturedCard
-                  title="Inclusive Programs for People of All Backgrounds"
-                  description="Join our welcoming community where everyone belongs."
-                  imageSrc="/img/featured_card.jpg"
-                  imageAlt="Person in yoga pose with arms raised, wearing mustard yellow athletic top"
-                />
-                <FeaturedCard
-                  title="Mindful Movement & Wellness"
-                  description="Discover the power of intentional movement and breath work."
-                  imageSrc="/img/featured_card.jpg"
-                  imageAlt="Person in yoga pose with arms raised, wearing mustard yellow athletic top"
-                />
-                <FeaturedCard
-                  title="Community & Connection"
-                  description="Build meaningful relationships through shared wellness practices."
-                  imageSrc="/img/featured_card.jpg"
-                  imageAlt="Person in yoga pose with arms raised, wearing mustard yellow athletic top"
-                />
+            {/* Secondary Colors */}
+            <div className="flex items-center gap-2">
+              <div className="w-20 text-sm font-medium text-neutral-500">Secondary</div>
+              <div className="grid grid-cols-11 gap-1 flex-1">
+                <div className="h-12 rounded bg-secondary-50 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-secondary-100 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-secondary-200 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-secondary-300 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-secondary-400 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-secondary-500 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-secondary-600 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-secondary-700 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-secondary-800 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-secondary-900 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-secondary-950 border border-neutral-200"></div>
+              </div>
+            </div>
+
+            {/* Accent Colors */}
+            <div className="flex items-center gap-2">
+              <div className="w-20 text-sm font-medium text-neutral-500">Accent</div>
+              <div className="grid grid-cols-11 gap-1 flex-1">
+                <div className="h-12 rounded bg-accent-50 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-accent-100 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-accent-200 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-accent-300 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-accent-400 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-accent-500 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-accent-600 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-accent-700 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-accent-800 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-accent-900 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-accent-950 border border-neutral-200"></div>
+              </div>
+            </div>
+
+            {/* Neutral Colors */}
+            <div className="flex items-center gap-2">
+              <div className="w-20 text-sm font-medium text-neutral-500">Neutral</div>
+              <div className="grid grid-cols-11 gap-1 flex-1">
+                <div className="h-12 rounded bg-neutral-50 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-neutral-100 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-neutral-200 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-neutral-300 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-neutral-400 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-neutral-500 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-neutral-600 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-neutral-700 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-neutral-800 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-neutral-900 border border-neutral-200"></div>
+                <div className="h-12 rounded bg-neutral-950 border border-neutral-200"></div>
               </div>
             </div>
           </div>
 
-          {/* Usage Guidelines */}
+          {/* Color Usage Guidelines */}
           <div className="mt-8 p-6 bg-neutral-50 rounded-lg">
-            <h4 className="text-lg font-medium text-foreground mb-3">Usage Guidelines</h4>
-            <ul className="space-y-2 text-sm text-neutral-600">
-              <li>• Use featured cards to highlight important programs, services, or key messages</li>
-              <li>• Keep titles concise and impactful - aim for 4-8 words</li>
-              <li>• Descriptions should be brief but compelling - 1-2 sentences maximum</li>
-              <li>• Use high-quality, relevant images that support your message</li>
-              <li>• White text on dark overlays ensures good readability</li>
-              <li>• Hover effects provide engaging visual feedback</li>
-              <li>• Cards work well in grid layouts for showcasing multiple features</li>
-              <li>• Ensure images have proper alt text for accessibility</li>
-              <li>• Consider using cards as links by providing an href prop</li>
-            </ul>
+            <h4 className="text-lg font-medium text-foreground mb-3">Color Guidelines</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h5 className="font-medium text-foreground mb-2">Primary Colors</h5>
+                <ul className="space-y-1 text-sm text-neutral-600">
+                  <li>• Use for main brand elements and primary actions</li>
+                  <li>• 500-700 for primary buttons and links</li>
+                  <li>• 50-200 for backgrounds and highlights</li>
+                  <li>• 800-950 for text on light backgrounds</li>
+                </ul>
+              </div>
+              <div>
+                <h5 className="font-medium text-foreground mb-2">Secondary Colors</h5>
+                <ul className="space-y-1 text-sm text-neutral-600">
+                  <li>• Use for secondary actions and complementary elements</li>
+                  <li>• 500-700 for secondary buttons and accents</li>
+                  <li>• 50-200 for subtle backgrounds</li>
+                  <li>• 800-950 for text and borders</li>
+                </ul>
+              </div>
+              <div>
+                <h5 className="font-medium text-foreground mb-2">Accent Colors</h5>
+                <ul className="space-y-1 text-sm text-neutral-600">
+                  <li>• Use for call-to-action elements and alerts</li>
+                  <li>• 500-700 for important buttons and notifications</li>
+                  <li>• 50-200 for warning backgrounds</li>
+                  <li>• 800-950 for error states and critical text</li>
+                </ul>
+              </div>
+              <div>
+                <h5 className="font-medium text-foreground mb-2">Neutral Colors</h5>
+                <ul className="space-y-1 text-sm text-neutral-600">
+                  <li>• Use for text, borders, and subtle backgrounds</li>
+                  <li>• 50-200 for light backgrounds and subtle borders</li>
+                  <li>• 300-500 for disabled states and placeholders</li>
+                  <li>• 600-950 for text and strong borders</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -426,6 +361,215 @@ export default function DesignSystem() {
               <li>• Keep badge text concise and descriptive</li>
               <li>• Small size is optimized for tags, labels, and status indicators</li>
               <li>• Perfect for categorizing content like meditation types, duration, or skill levels</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Hero Section */}
+        <section className="mb-16">
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold text-foreground mb-2">Hero Section</h2>
+            <p className="text-neutral-600 mb-6">
+              A full-width hero section with compelling messaging, call-to-action buttons, and a prominent image. 
+              Perfect for landing pages and key content areas.
+            </p>
+          </div>
+
+          {/* Hero Example */}
+          <div className="border border-neutral-200 rounded-lg overflow-hidden">
+            <Hero
+              title="Creating welcoming yoga spaces for every body in Baltimore"
+              description="Our studio offers an open, affirming space where all neighbors can move, breathe, and rest together. We teach trauma-informed classes, provide sliding-scale pricing, and create a community rooted in care, respect, and collective well-being."
+              primaryButtonText="Get Started"
+              secondaryButtonText="Learn More"
+              primaryButtonHref="#"
+              secondaryButtonHref="#"
+              imageSrc="/img/Yoga_Home_Pic.png"
+              imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
+            />
+          </div>
+
+          {/* Usage Guidelines */}
+          <div className="mt-8 p-6 bg-neutral-50 rounded-lg">
+            <h4 className="text-lg font-medium text-foreground mb-3">Usage Guidelines</h4>
+            <ul className="space-y-2 text-sm text-neutral-600">
+              <li>• Use hero sections for key landing pages and important content areas</li>
+              <li>• Keep headlines concise but impactful - aim for 6-12 words</li>
+              <li>• Description should provide context and value proposition in 1-2 sentences</li>
+              <li>• Primary button should represent the main action you want users to take</li>
+              <li>• Secondary button should offer an alternative or less urgent action</li>
+              <li>• Use high-quality, relevant images that support your message</li>
+              <li>• Ensure text has sufficient contrast against background colors</li>
+              <li>• Test on mobile devices to ensure responsive layout works well</li>
+              <li>• Consider accessibility - provide meaningful alt text for images</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Image and Text Section */}
+        <section className="mb-16">
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold text-foreground mb-2">Image and Text</h2>
+            <p className="text-neutral-600 mb-6">
+              A versatile content component that pairs compelling text with engaging imagery. 
+              Available in three distinct variants to match different design contexts and content needs.
+            </p>
+          </div>
+
+          {/* Image and Text Examples */}
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-4">Base Variant</h3>
+              <div className="border border-neutral-200 rounded-lg overflow-hidden">
+                <ImageAndText
+                  title="Header goes here."
+                  description="A warm, inclusive yoga studio for every body. Our teachers center BIPOC voices, guiding classes that honor different abilities and experiences. We nurture connection, healing, and joy through movement, breath, and community care, making yoga truly accessible to all."
+                  imageSrc="/img/rocks.jpg"
+                  imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
+                  variant="base"
+                />
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-4">Secondary Variant</h3>
+              <div className="border border-neutral-200 rounded-lg overflow-hidden">
+                <ImageAndText
+                  title="Header goes here."
+                  description="A warm, inclusive yoga studio for every body. Our teachers center BIPOC voices, guiding classes that honor different abilities and experiences. We nurture connection, healing, and joy through movement, breath, and community care, making yoga truly accessible to all."
+                  imageSrc="/img/rocks.jpg"
+                  imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
+                  variant="secondary"
+                />
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-4">Tertiary Variant</h3>
+              <div className="border border-neutral-200 rounded-lg overflow-hidden">
+                <ImageAndText
+                  title="Header goes here."
+                  description="A warm, inclusive yoga studio for every body. Our teachers center BIPOC voices, guiding classes that honor different abilities and experiences. We nurture connection, healing, and joy through movement, breath, and community care, making yoga truly accessible to all."
+                  imageSrc="/img/rocks.jpg"
+                  imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
+                  variant="tertiary"
+                />
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-4">Image Position Variants</h3>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-base font-medium text-foreground mb-2">Image on Right (Default)</h4>
+                  <div className="border border-neutral-200 rounded-lg overflow-hidden">
+                    <ImageAndText
+                      title="Image on the Right"
+                      description="This is the default layout with text on the left and image on the right."
+                      imageSrc="/img/rocks.jpg"
+                      imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
+                      variant="base"
+                      imagePosition="right"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-base font-medium text-foreground mb-2">Image on Left</h4>
+                  <div className="border border-neutral-200 rounded-lg overflow-hidden">
+                    <ImageAndText
+                      title="Image on the Left"
+                      description="This layout places the image on the left and text on the right."
+                      imageSrc="/img/rocks.jpg"
+                      imageAlt="Person meditating outdoors in natural setting with hands in prayer position"
+                      variant="secondary"
+                      imagePosition="left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Usage Guidelines */}
+          <div className="mt-8 p-6 bg-neutral-50 rounded-lg">
+            <h4 className="text-lg font-medium text-foreground mb-3">Usage Guidelines</h4>
+            <ul className="space-y-2 text-sm text-neutral-600">
+              <li>• <strong>Base Variant:</strong> Use for standard content sections with white background and dark text</li>
+              <li>• <strong>Secondary Variant:</strong> Use for subtle content sections with neutral-50 background and dark text</li>
+              <li>• <strong>Tertiary Variant:</strong> Use for high-impact sections with primary-950 background and white text</li>
+              <li>• <strong>Image Position:</strong> Choose &apos;left&apos; or &apos;right&apos; to control image placement relative to text</li>
+              <li>• <strong>Responsive Design:</strong> Layout automatically stacks vertically on mobile devices</li>
+              <li>• <strong>Accessibility:</strong> Always provide meaningful alt text for images</li>
+              <li>• <strong>Content Guidelines:</strong> Keep titles concise and descriptions informative but brief</li>
+              <li>• <strong>Interactive Use:</strong> Add href prop to make the entire component clickable</li>
+              <li>• <strong>Typography:</strong> Uses font-sans for consistent branding across all variants</li>
+              <li>• <strong>Image Quality:</strong> Use high-resolution images that work well at different screen sizes</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Featured Card Section */}
+        <section className="mb-16">
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold text-foreground mb-2">Featured Cards</h2>
+            <p className="text-neutral-600 mb-6">
+              Eye-catching cards with overlay text and hover effects. Perfect for highlighting featured content, 
+              programs, or key messages with compelling visuals and smooth interactions.
+            </p>
+          </div>
+
+          {/* Featured Card Examples */}
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-4">Single Featured Card</h3>
+              <div className="max-w-md">
+                <FeaturedCard
+                  title="Inclusive Programs for People of All Backgrounds"
+                  description="Join our welcoming community where everyone belongs. Experience yoga, meditation, and wellness practices designed for people from all walks of life."
+                  imageSrc="/img/featured_card.jpg"
+                  imageAlt="Person in yoga pose with arms raised, wearing mustard yellow athletic top"
+                />
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-4">Featured Card Grid</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <FeaturedCard
+                  title="Inclusive Programs for People of All Backgrounds"
+                  description="Join our welcoming community where everyone belongs."
+                  imageSrc="/img/featured_card.jpg"
+                  imageAlt="Person in yoga pose with arms raised, wearing mustard yellow athletic top"
+                />
+                <FeaturedCard
+                  title="Mindful Movement & Wellness"
+                  description="Discover the power of intentional movement and breath work."
+                  imageSrc="/img/featured_card.jpg"
+                  imageAlt="Person in yoga pose with arms raised, wearing mustard yellow athletic top"
+                />
+                <FeaturedCard
+                  title="Community & Connection"
+                  description="Build meaningful relationships through shared wellness practices."
+                  imageSrc="/img/featured_card.jpg"
+                  imageAlt="Person in yoga pose with arms raised, wearing mustard yellow athletic top"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Usage Guidelines */}
+          <div className="mt-8 p-6 bg-neutral-50 rounded-lg">
+            <h4 className="text-lg font-medium text-foreground mb-3">Usage Guidelines</h4>
+            <ul className="space-y-2 text-sm text-neutral-600">
+              <li>• Use featured cards to highlight important programs, services, or key messages</li>
+              <li>• Keep titles concise and impactful - aim for 4-8 words</li>
+              <li>• Descriptions should be brief but compelling - 1-2 sentences maximum</li>
+              <li>• Use high-quality, relevant images that support your message</li>
+              <li>• White text on dark overlays ensures good readability</li>
+              <li>• Hover effects provide engaging visual feedback</li>
+              <li>• Cards work well in grid layouts for showcasing multiple features</li>
+              <li>• Ensure images have proper alt text for accessibility</li>
+              <li>• Consider using cards as links by providing an href prop</li>
             </ul>
           </div>
         </section>
@@ -633,149 +777,6 @@ export default function DesignSystem() {
               <li>• <strong>8xl (6rem):</strong> Use for extreme display text and billboard-style headings</li>
               <li>• <strong>9xl (8rem):</strong> Use for maximum impact display text and large format designs</li>
             </ul>
-          </div>
-        </section>
-
-        {/* Colors Section */}
-        <section className="mb-16">
-          <div className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-2">Colors</h2>
-            <p className="text-neutral-600 mb-6">
-              A comprehensive color palette designed for the Union Yoga brand. Each color family includes 
-              tints from 50 (lightest) to 950 (darkest) for maximum design flexibility and accessibility.
-            </p>
-          </div>
-
-          {/* Color Scale Header */}
-          <div className="mb-6">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-20 text-sm font-medium text-neutral-500">Color</div>
-              <div className="grid grid-cols-11 gap-1 flex-1">
-                {[50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map((shade) => (
-                  <div key={shade} className="text-xs font-medium text-neutral-500 text-center">
-                    {shade}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Color Palettes */}
-          <div className="space-y-4">
-            {/* Primary Colors */}
-            <div className="flex items-center gap-2">
-              <div className="w-20 text-sm font-medium text-neutral-500">Primary</div>
-              <div className="grid grid-cols-11 gap-1 flex-1">
-                <div className="h-12 rounded bg-primary-50 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-primary-100 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-primary-200 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-primary-300 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-primary-400 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-primary-500 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-primary-600 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-primary-700 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-primary-800 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-primary-900 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-primary-950 border border-neutral-200"></div>
-              </div>
-            </div>
-
-            {/* Secondary Colors */}
-            <div className="flex items-center gap-2">
-              <div className="w-20 text-sm font-medium text-neutral-500">Secondary</div>
-              <div className="grid grid-cols-11 gap-1 flex-1">
-                <div className="h-12 rounded bg-secondary-50 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-secondary-100 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-secondary-200 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-secondary-300 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-secondary-400 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-secondary-500 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-secondary-600 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-secondary-700 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-secondary-800 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-secondary-900 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-secondary-950 border border-neutral-200"></div>
-              </div>
-            </div>
-
-            {/* Accent Colors */}
-            <div className="flex items-center gap-2">
-              <div className="w-20 text-sm font-medium text-neutral-500">Accent</div>
-              <div className="grid grid-cols-11 gap-1 flex-1">
-                <div className="h-12 rounded bg-accent-50 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-accent-100 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-accent-200 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-accent-300 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-accent-400 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-accent-500 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-accent-600 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-accent-700 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-accent-800 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-accent-900 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-accent-950 border border-neutral-200"></div>
-              </div>
-            </div>
-
-            {/* Neutral Colors */}
-            <div className="flex items-center gap-2">
-              <div className="w-20 text-sm font-medium text-neutral-500">Neutral</div>
-              <div className="grid grid-cols-11 gap-1 flex-1">
-                <div className="h-12 rounded bg-neutral-50 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-neutral-100 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-neutral-200 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-neutral-300 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-neutral-400 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-neutral-500 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-neutral-600 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-neutral-700 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-neutral-800 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-neutral-900 border border-neutral-200"></div>
-                <div className="h-12 rounded bg-neutral-950 border border-neutral-200"></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Color Usage Guidelines */}
-          <div className="mt-8 p-6 bg-neutral-50 rounded-lg">
-            <h4 className="text-lg font-medium text-foreground mb-3">Color Guidelines</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h5 className="font-medium text-foreground mb-2">Primary Colors</h5>
-                <ul className="space-y-1 text-sm text-neutral-600">
-                  <li>• Use for main brand elements and primary actions</li>
-                  <li>• 500-700 for primary buttons and links</li>
-                  <li>• 50-200 for backgrounds and highlights</li>
-                  <li>• 800-950 for text on light backgrounds</li>
-                </ul>
-              </div>
-              <div>
-                <h5 className="font-medium text-foreground mb-2">Secondary Colors</h5>
-                <ul className="space-y-1 text-sm text-neutral-600">
-                  <li>• Use for secondary actions and complementary elements</li>
-                  <li>• 500-700 for secondary buttons and accents</li>
-                  <li>• 50-200 for subtle backgrounds</li>
-                  <li>• 800-950 for text and borders</li>
-                </ul>
-              </div>
-              <div>
-                <h5 className="font-medium text-foreground mb-2">Accent Colors</h5>
-                <ul className="space-y-1 text-sm text-neutral-600">
-                  <li>• Use for call-to-action elements and alerts</li>
-                  <li>• 500-700 for important buttons and notifications</li>
-                  <li>• 50-200 for warning backgrounds</li>
-                  <li>• 800-950 for error states and critical text</li>
-                </ul>
-              </div>
-              <div>
-                <h5 className="font-medium text-foreground mb-2">Neutral Colors</h5>
-                <ul className="space-y-1 text-sm text-neutral-600">
-                  <li>• Use for text, borders, and subtle backgrounds</li>
-                  <li>• 50-200 for light backgrounds and subtle borders</li>
-                  <li>• 300-500 for disabled states and placeholders</li>
-                  <li>• 600-950 for text and strong borders</li>
-                </ul>
-              </div>
-            </div>
           </div>
         </section>
 
