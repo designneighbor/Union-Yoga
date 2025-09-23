@@ -12,12 +12,20 @@ export const initScrollAnimations = () => {
     });
   }, observerOptions);
 
-  // Observe all elements with fade-in classes
+  // Find all elements with fade-in classes
   const elements = document.querySelectorAll(
     '.fade-in-up, .fade-in-down, .fade-in-left, .fade-in-right'
   );
   
-  elements.forEach((el) => observer.observe(el));
+  // Reset animation state by removing visible class from all elements
+  elements.forEach((el) => {
+    el.classList.remove('visible');
+  });
+
+  // Add a small delay to ensure the reset is visible
+  setTimeout(() => {
+    elements.forEach((el) => observer.observe(el));
+  }, 100);
 
   return () => {
     elements.forEach((el) => observer.unobserve(el));

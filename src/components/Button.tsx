@@ -23,15 +23,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`.trim();
     
     if (asChild) {
-      return (
-        <span
-          className={classes}
-          ref={ref as React.Ref<HTMLSpanElement>}
-          {...(props as React.HTMLAttributes<HTMLSpanElement>)}
-        >
-          {children}
-        </span>
-      );
+      const child = children as React.ReactElement;
+      return React.cloneElement(child, {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        className: `${classes} ${(child.props as any)?.className || ''}`.trim(),
+        ref,
+        ...props,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } as any);
     }
     
     return (

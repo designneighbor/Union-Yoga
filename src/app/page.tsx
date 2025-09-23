@@ -9,10 +9,8 @@ export default function Home() {
   return (
     <div className="font-sans">
       
-      {/* Navigation Bar with Animations */}
-      <NavigationBar
-        enableAnimations={true}
-      />
+      {/* Navigation Bar */}
+      <NavigationBar className="fade-in-down delay-200"/>
 
       {/* Hero Section */}
       <Hero

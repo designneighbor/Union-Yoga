@@ -13,7 +13,6 @@ export interface NavigationBarProps extends React.HTMLAttributes<HTMLElement> {
   signInHref?: string;
   primaryButtonText?: string;
   primaryButtonHref?: string;
-  enableAnimations?: boolean;
 }
 
 const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
@@ -28,7 +27,6 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
     signInHref = "#signin",
     primaryButtonText = "Design System",
     primaryButtonHref = "/design-system",
-    enableAnimations = false,
     ...props 
   }, ref) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -41,11 +39,6 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
       setIsMobileMenuOpen(false);
     };
 
-    // Animation classes based on enableAnimations prop
-    const logoAnimationClass = enableAnimations ? 'fade-in-down delay-200' : '';
-    const navLinksAnimationClass = enableAnimations ? 'fade-in-down delay-400' : '';
-    const buttonsAnimationClass = enableAnimations ? 'fade-in-down delay-800' : '';
-    const borderAnimationClass = enableAnimations ? 'fade-in-down delay-600' : '';
 
     return (
       <nav
@@ -56,7 +49,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
         <div className="container px-4 sm:px-6 md:px-8 xl:px-10">
           <div className="flex items-center justify-between py-4">
             {/* Logo */}
-            <div className={`flex-shrink-0 ${logoAnimationClass}`}>
+            <div className={`flex-shrink-0 `}>
               <Link 
                 href="/" 
                 className="font-sans font-bold text-xl lg:text-2xl text-primary-950 hover:text-primary-800 transition-colors duration-200"
@@ -70,7 +63,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
            
 
               {/* Navigation Links */}
-              <div className={`items-center space-x-2 bg-neutral-200 flex hidden lg:flex rounded-full ${navLinksAnimationClass}`}>
+              <div className={`items-center space-x-2 bg-neutral-200 flex hidden lg:flex rounded-full`}>
                 {navigationItems.map((item, index) => (
                   <a
                     key={index}
@@ -83,7 +76,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
               </div>
 
               {/* Action Buttons */}
-              <div className={`hidden lg:flex items-center space-x-4 ${buttonsAnimationClass}`}>
+              <div className={`hidden lg:flex items-center space-x-4 `}>
                 <a
                   href={signInHref}
                   className="font-sans font-normal text-sm font-medium text-primary-950 hover:text-primary-800 transition-colors duration-200"
@@ -105,7 +98,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
            
 
             {/* Mobile Menu Button */}
-            <div className={`lg:hidden ${logoAnimationClass}`}>
+            <div className={`lg:hidden `}>
               <button
                 type="button"
                 className="inline-flex items-center justify-center p-2 rounded-md text-primary-950 hover:text-primary-800 hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 transition-colors duration-200"
@@ -232,7 +225,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
             </div>
           )}
         </div>
-        <div className={`border-b border-neutral-200 ${borderAnimationClass}`}></div>
+        <div className={`border-b border-neutral-200 `}></div>
       </nav>
     );
   }
