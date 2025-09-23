@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Button } from './Button';
 
 export interface NavigationBarProps extends React.HTMLAttributes<HTMLElement> {
@@ -30,6 +31,13 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
     ...props 
   }, ref) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
+    
+    // Check if we're on the home page to enable animations
+    const isHomePage = pathname === '/';
+    
+    // Animation classes - only apply on home page
+    const animationClass = isHomePage ? 'fade-in-down delay-200' : '';
 
     const toggleMobileMenu = () => {
       setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -49,7 +57,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
         <div className="container px-4 sm:px-6 md:px-8 xl:px-10">
           <div className="flex items-center justify-between py-4">
             {/* Logo */}
-            <div className="flex-shrink-0 fade-in-down delay-200">
+            <div className={`flex-shrink-0 ${animationClass}`}>
               <Link 
                 href="/" 
                 className="font-sans font-bold text-xl lg:text-2xl text-primary-950 hover:text-primary-800 transition-colors duration-200"
@@ -63,7 +71,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
            
 
               {/* Navigation Links */}
-              <div className="fade-in-down delay-200 items-center space-x-2 bg-neutral-200 flex hidden lg:flex rounded-full">
+              <div className={`${animationClass} items-center space-x-2 bg-neutral-200 flex hidden lg:flex rounded-full`}>
                 {navigationItems.map((item, index) => (
                   <a
                     key={index}
@@ -76,7 +84,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
               </div>
 
               {/* Action Buttons */}
-              <div className="fade-in-down delay-200 hidden lg:flex items-center space-x-4">
+              <div className={`${animationClass} hidden lg:flex items-center space-x-4`}>
                 <a
                   href={signInHref}
                   className="font-sans font-normal text-sm font-medium text-primary-950 hover:text-primary-800 transition-colors duration-200"
@@ -98,7 +106,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
            
 
             {/* Mobile Menu Button */}
-            <div className="lg:hidden fade-in-down delay-200">
+            <div className={`lg:hidden ${animationClass}`}>
               <button
                 type="button"
                 className="inline-flex items-center justify-center p-2 rounded-md text-primary-950 hover:text-primary-800 hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 transition-colors duration-200"
@@ -225,7 +233,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
             </div>
           )}
         </div>
-        <div className="fade-in-down delay-200 border-b border-neutral-200"></div>
+        <div className={`${animationClass} border-b border-neutral-200`}></div>
       </nav>
     );
   }
