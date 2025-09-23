@@ -49,7 +49,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
         <div className="container px-4 sm:px-6 md:px-8 xl:px-10">
           <div className="flex items-center justify-between py-4">
             {/* Logo */}
-            <div className={`flex-shrink-0 `}>
+            <div className="flex-shrink-0 fade-in-down delay-200">
               <Link 
                 href="/" 
                 className="font-sans font-bold text-xl lg:text-2xl text-primary-950 hover:text-primary-800 transition-colors duration-200"
@@ -63,7 +63,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
            
 
               {/* Navigation Links */}
-              <div className={`items-center space-x-2 bg-neutral-200 flex hidden lg:flex rounded-full`}>
+              <div className="fade-in-down delay-200 items-center space-x-2 bg-neutral-200 flex hidden lg:flex rounded-full">
                 {navigationItems.map((item, index) => (
                   <a
                     key={index}
@@ -76,7 +76,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
               </div>
 
               {/* Action Buttons */}
-              <div className={`hidden lg:flex items-center space-x-4 `}>
+              <div className="fade-in-down delay-200 hidden lg:flex items-center space-x-4">
                 <a
                   href={signInHref}
                   className="font-sans font-normal text-sm font-medium text-primary-950 hover:text-primary-800 transition-colors duration-200"
@@ -98,7 +98,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
            
 
             {/* Mobile Menu Button */}
-            <div className={`lg:hidden `}>
+            <div className="lg:hidden fade-in-down delay-200">
               <button
                 type="button"
                 className="inline-flex items-center justify-center p-2 rounded-md text-primary-950 hover:text-primary-800 hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 transition-colors duration-200"
@@ -225,7 +225,7 @@ const NavigationBar = React.forwardRef<HTMLElement, NavigationBarProps>(
             </div>
           )}
         </div>
-        <div className={`border-b border-neutral-200 `}></div>
+        <div className="fade-in-down delay-200 border-b border-neutral-200"></div>
       </nav>
     );
   }

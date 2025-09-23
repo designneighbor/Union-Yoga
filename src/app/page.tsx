@@ -10,7 +10,7 @@ export default function Home() {
     <div className="font-sans">
       
       {/* Navigation Bar */}
-      <NavigationBar className="fade-in-down delay-200"/>
+      <NavigationBar />
 
       {/* Hero Section */}
       <Hero
@@ -25,7 +25,7 @@ export default function Home() {
       />
 
       {/* Featured Cards Block */}
-      <div className="bg-neutral-50 fade-in-up delay-800">
+      <div className="bg-neutral-50 fade-in-up delay-400">
         <div className="container px-4 sm:px-6 md:px-8 xl:px-10 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <FeaturedCard
