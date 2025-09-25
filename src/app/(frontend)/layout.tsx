@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
-import "./globals.css";
-import { ClientLayout } from './ClientLayout';
+import "../globals.css";
+import { ClientLayout } from '../ClientLayout';
+import { SanityLive } from '@/sanity/lib/live'
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-sans",
@@ -14,18 +15,19 @@ export const metadata: Metadata = {
   description: "Our studio offers an open, affirming space where all neighbors can move, breathe, and rest together. We teach trauma-informed classes, provide sliding-scale pricing, and create a community rooted in care, respect, and collective well-being.",
 };
 
-export default function RootLayout({
+export default function FrontendLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body
+    <>
+     <body
         className={`${ibmPlexSans.variable} antialiased`}
       >
         <ClientLayout>{children}</ClientLayout>
+      <SanityLive />
       </body>
-    </html>
-  );
+    </>
+  )
 }
