@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { ClientLayout } from './ClientLayout';
+import { SanityLive } from '@/sanity/lib/live';
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-sans",
@@ -25,6 +26,7 @@ export default function RootLayout({
         className={`${ibmPlexSans.variable} antialiased`}
       >
         <ClientLayout>{children}</ClientLayout>
+        <SanityLive />
       </body>
     </html>
   );
